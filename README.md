@@ -22,23 +22,25 @@ IDE used to build: [AWS Cloud9](https://aws.amazon.com/cloud9/?origin=c9io)
 ## Deployment
 To run the code locally, please follow the instructions below.  
 (Note: **Python 3.6** must be installed for be able to run this program)
-1. Git clone this repository to a local directory:  
+1. Navigate to a directory where you want to keep the code
+
+2. Git clone this repository to a local directory:  
 ```
 git clone https://github.com/bglynch/webcrawler_python.git
 ```
-2. Install the packages required to run this project
+3. Install the packages required to run this project
 ```
 pip install -r requirements.txt
 ```
-3. Open the **data_to_html.py** file and update the URL to a website of your choice
+4. Open the **data_to_html.py** file and update the URL to a website of your choice
 ```
 URL = 'your-website-url'
 ```
-4. Run the **data_to_html** file:
+5. Run the **data_to_html** file:
 ```
 python data_to_html.py
 ```
-5. Open **sitemap.html** in your browser
+6. Open **sitemap.html** in your browser
 
 ## Build Details
 ### Build Plan
@@ -52,12 +54,12 @@ python data_to_html.py
 - [x] Write these to a Home Page Sitemap
   
 #### Stage 02
-- [] From the Starting URL get all the links in the domain
-- [] Split links into INTERNAL and EXTERNAL
-- [] Using the links from the INTERNAL, get all images in the domain
-- [] Using the links from the INTERNAL, get all css in the domain
-- [] Using the links from the INTERNAL, get all javascript in the domain
-- [] Write these to a Domain Page Sitemap
+- [ ] From the Starting URL get all the links in the domain
+- [ ] Split links into INTERNAL and EXTERNAL
+- [ ] Using the links from the INTERNAL, get all images in the domain
+- [ ] Using the links from the INTERNAL, get all css in the domain
+- [ ] Using the links from the INTERNAL, get all javascript in the domain
+- [ ] Write these to a Domain Page Sitemap
 
 ### Bugs
 - image_links in wrong format, inside double set of quotes
