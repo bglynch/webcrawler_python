@@ -34,3 +34,18 @@ for tag in get_anchor_tags:
         set_of_urls.add(tag['href'])
 
 pprint.pprint(set_of_urls)
+
+# Split links into Internal and External Links
+internal_links = set()
+external_links = set()
+
+for link in set_of_urls:
+    if 'https://wiprodigital.com' in link:
+        internal_links.add(link)
+    else:
+        external_links.add(link)
+
+print("")        
+print(internal_links)        
+print("")        
+print(external_links)        
