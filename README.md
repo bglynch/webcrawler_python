@@ -73,5 +73,7 @@ python data_to_html.py
 - Look for better method to display data as html
     - so it looks similar to **scratchpad/mockup.html**
     - possible update the dataset from a set to a dict
+- Manual tests for other sites
+- Add automated tests to check if links return 200 status code
 
 
