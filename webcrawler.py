@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import urllib3
 import pprint
+import re
 
 
 # URL to be scraped
@@ -33,7 +34,6 @@ for tag in get_anchor_tags:
             tag['href'] = tag['href'][0:-1]
         set_of_urls.add(tag['href'])
 
-pprint.pprint(set_of_urls)
 
 # Split links into Internal and External Links
 internal_links = set()
@@ -45,7 +45,15 @@ for link in set_of_urls:
     else:
         external_links.add(link)
 
-print("")        
-print(internal_links)        
-print("")        
-print(external_links)        
+
+# Get all images from a page
+regex = r"(\'|\")https://\S*\.(jpg|png|jpeg|gif)(\'|\")"
+text_str = str(soup)
+matches = re.finditer(regex, text_str, re.MULTILINE)
+
+image_links = set()
+for match in matches:
+    image_links.add(match.group())
+
+print(image_links)
+print(len(image_links))
