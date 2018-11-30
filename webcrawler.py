@@ -46,7 +46,7 @@ for link in set_of_urls:
         external_links.add(link)
 
 
-# Get all images from a page
+# Get all images from URL
 regex = r"(\'|\")https://\S*\.(jpg|png|jpeg|gif)(\'|\")"
 text_str = str(soup)
 matches = re.finditer(regex, text_str, re.MULTILINE)
@@ -55,5 +55,9 @@ image_links = set()
 for match in matches:
     image_links.add(match.group())
 
-print(image_links)
-print(len(image_links))
+
+# Get all css files from URL
+css_links = [link_tag["href"] for link_tag in soup.findAll('link', rel="stylesheet")]
+
+# Get all js links from URL
+js_links = [script_tag['src'] for script_tag in soup.find_all('script') if script_tag.get('src')]
